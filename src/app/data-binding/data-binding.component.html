@@ -1,0 +1,31 @@
+<section class="property-binding">
+
+  <article>
+    <h3>Interpolation / Interpolação</h3>
+    <p>String renderizada com interpolação: {{ url }}</p>
+    <p>Soma entre número 1 + 1: {{ 1 + 1 }}</p>
+    <p>Resultado de 2 + 32 = {{ 2 + 32 + getValor() }}</p>
+    <p>{{ getCurtiCurso() }}</p>
+  </article>
+
+  <article>
+
+    <h3>Property Binding</h3>
+
+    <img src="{{ imagem }}" alt="">
+
+    <br>
+    <br>
+
+    <!-- Property Binding é o nome dado a essa utilização, porque temos uma propriedade
+    dessa tag HTML -->
+    <img [src]="imagem" alt="">
+
+    <!-- Equivale ao de cima -->
+    <img bind-src="imagem" alt="">
+
+
+  </article>
+
+
+</section>
