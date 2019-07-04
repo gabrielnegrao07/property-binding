@@ -1,4 +1,4 @@
-<section class="property-binding">
+<!-- <section class="property-binding"> -->
 
   <!-- <article>
     <h3>Interpolation / Interpolação</h3>
@@ -27,16 +27,16 @@
 
   <!-- </article> -->
 
-  <article>
+  <!-- <article>
 
     <h3>Class e Style Binding</h3>
 
     <div>
-      Selecione uma classe:
+      Selecione uma classe: -->
       <!-- #(cerquilha) nomeDaVariavel, para escutarmos a mudança precisamos escutar o -->
       <!-- evento de change (change) e colocamos '0' porque não queremos executar  -->
       <!-- no componente por enquanto. -->
-      </div>
+      <!-- </div>
       <select #classe (change)="0">
         <option value="alert-success">Sucesso</option>
         <option value="alert-info">Info</option>
@@ -45,29 +45,29 @@
       </select>
 
       <br>
-      <br>
+      <br> -->
 
       <!-- Interpolation -->
-      <div class="alert {{ classe.value }}" role="alert">
+      <!-- <div class="alert {{ classe.value }}" role="alert">
         Texto colorido conforme valor do combobox.
-      </div>
+      </div> -->
 
       <!-- Class binding aplicado a cada uma das div para ficarem coloridas. -->
 
       <!-- se o valor for alert-success, o Angular aplica a class alert-success que está -->
       <!-- dentro do colchetes -->
-      <div class="alert " role="alert"
+      <!-- <div class="alert " role="alert"
         [class.alert-success]="classe.value == 'alert-success'">
         Sucesso
-      </div>
+      </div> -->
 
       <!-- property binding de classe -->
-      <div class="alert " role="alert"
+      <!-- <div class="alert " role="alert"
         [class.alert-info]="classe.value == 'alert-info'">
         Info
-      </div>
+      </div> -->
 
-      <div class="alert " role="alert"
+      <!-- <div class="alert " role="alert"
         [class.alert-warning]="classe.value == 'alert-warning'">
       Alerta
       </div>
@@ -82,15 +82,57 @@
         <p
           [class.alert-danger]="classe.value == 'alert-danger'">
           Esse texto somente aparece em caso de erro.</p>
-      </div>
+      </div> -->
 
       <!-- Style binding -->
-      <div class="alert alert-info" role="alert"
+      <!-- <div class="alert alert-info" role="alert"
         [style.display]="classe.value == 'alert-danger' ? 'block' : 'none'">
           Esse texto somente aparece em caso de erro.
       </div>
 
-  </article>
+  </article> -->
+
+
+<!-- </section> -->
+
+<section class="event-binding">
+
+<article>
+
+  <h3>Event binding</h3>
+
+  <div>
+
+    <button (click)="botaoClicado()" class="btn btn-primary">Me clique!</button>
+
+    <br><br>
+
+    <!-- keyup é quando terminamos de apertar uma tecla do teclado -->
+    <input type="text"
+      (keyup)="oneKeyUp($event)"
+      (keyup.enter)="salvarValor(campoInput.value)"
+      (blur)="salvarValor(campoInput.value)"
+      #campoInput/>
+
+      <!-- usando a variável 'campoIput' nós conseguimos fazer uma referencia ao campo '$event.target'  que
+      é o campo de input-->
+
+      <!-- <p>Valor Atual: {{ valorAtual }}</p> -->
+
+      <p>Valor Salvo: {{ valorSalvo }}</p>
+
+      <br>
+
+      <span
+         (mouseover)="onMouseOverOut()"
+         (mouseout)="onMouseOverOut()"
+         [class.highlight]="isMouseOver"
+         >
+        Passe o mouse sobre mim</span>
+
+  </div>
+
+</article>
 
 
 </section>
